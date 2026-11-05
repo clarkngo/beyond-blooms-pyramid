@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Bloom's Pyramid</title>
+  <meta name="description" content="A conceptual paper on sociomateriality, the CEAU assessment model, and authentic learning in the age of generative AI, planned for the ACBSP AI Forum 2027.">
+  <style>
+    :root {
+      --bg: #fdfdfb; --fg: #1d1d1b; --muted: #5c5c57; --accent: #2a5d8f;
+      --surface: #f3f2ee; --border: #dddcd6; --done: #2f7d4f; --code: #3b3a36;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161615; --fg: #ececea; --muted: #a3a39d; --accent: #8ab8e6;
+        --surface: #22221f; --border: #3a3a35; --done: #6cc28f; --code: #d9d8d2;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: var(--fg); margin: 0;
+           font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 44rem; margin: 0 auto; padding: 3rem 16px 4rem; }
+    h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .25rem; }
+    h2 { font-size: 1.2rem; margin: 2.5rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    h3 { font-size: 1rem; margin: 0 0 .25rem; }
+    p, li { max-width: 40rem; }
+    .subtitle { font-size: 1.05rem; margin: 0 0 .25rem; }
+    .authors { margin: 0 0 .25rem; }
+    .status { color: var(--muted); margin: 0; font-size: .95rem; }
+    .badge { display: inline-block; font-size: .8rem; padding: .1rem .5rem; border: 1px solid var(--border);
+             border-radius: 999px; color: var(--muted); margin-right: .35rem; }
+    a { color: var(--accent); }
+    ol li, ul li { margin-bottom: .4rem; }
+    nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-size: .95rem; }
+    nav li { margin: 0; }
+    .numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .5rem; margin: 1rem 0; }
+    .numbers div { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .75rem; }
+    .numbers strong { display: block; font-size: 1.3rem; line-height: 1.2; font-variant-numeric: tabular-nums; }
+    .numbers span { font-size: .85rem; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin: .75rem 0; }
+    @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .75rem .9rem; }
+    .card .label { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .card p { margin: .35rem 0 0; font-size: .95rem; }
+    .card ul { margin: .35rem 0 0; padding-left: 1.1rem; font-size: .95rem; }
+    .card li { margin-bottom: .2rem; }
+    .stage { display: flex; gap: .75rem; align-items: flex-start; }
+    .letter { flex: none; width: 2.25rem; height: 2.25rem; border-radius: 6px; border: 1px solid var(--border);
+              background: var(--bg); display: grid; place-items: center; font-weight: 700; color: var(--accent); }
+    .weight { display: grid; grid-template-columns: 1fr 4fr; height: 2rem; border-radius: 6px; overflow: hidden;
+              border: 1px solid var(--border); margin: .75rem 0 .35rem; font-size: .85rem; font-weight: 600; }
+    .weight div { display: grid; place-items: center; }
+    .weight .c { background: var(--surface); color: var(--muted); }
+    .weight .eau { background: var(--accent); color: var(--bg); }
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; margin: .5rem 0; }
+    th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { font-weight: 600; color: var(--muted); font-size: .85rem; }
+    td.role { text-align: center; font-variant-numeric: tabular-nums; width: 4.5rem; }
+    .table-wrap { overflow-x: auto; }
+    .timeline { list-style: none; padding: 0; }
+    .timeline li { display: grid; grid-template-columns: 5.5rem 1fr; gap: .75rem; margin-bottom: .35rem; }
+    .timeline .when { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .timeline .done { color: var(--done); }
+    .note { font-size: .9rem; color: var(--muted); }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: .9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Beyond Bloom's Pyramid</h1>
+    <p class="subtitle">Sociomateriality, CEAU, and authentic learning in the age of generative AI</p>
+    <p class="authors">Jim O'Farrell · Clark Jason Ngo</p>
+    <p class="status"><span class="badge">Conceptual paper</span><span class="badge">In progress</span>ACBSP AI Forum 2027</p>
+  </header>
+
+  <div class="numbers">
+    <div><strong>Jan 19, 2027</strong><span>Submission deadline</span></div>
+    <div><strong>Mar 11–13</strong><span>ACBSP AI Forum, San Diego</span></div>
+    <div><strong>20 / 80</strong><span>Create vs. Evaluate + Analyze + Understand</span></div>
+  </div>
+
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#argument">Argument</a></li>
+      <li><a href="#questions">Questions</a></li>
+      <li><a href="#ceau">CEAU</a></li>
+      <li><a href="#paper">Paper</a></li>
+      <li><a href="#program">Two phases</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#roles">Roles</a></li>
+      <li><a href="#repo">Repository</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="argument">Central argument</h2>
+  <p>Generative AI reconfigures how learners create, judge, explain, and demonstrate knowledge. When a
+  course grades only the AI-assisted deliverable, it can no longer see what the student actually knows.</p>
+  <ul>
+    <li><strong>Sociomateriality.</strong> Learning practices emerge through entanglements of people and
+      technology (Orlikowski, 2007; Orlikowski &amp; Scott, 2008).</li>
+    <li><strong>Bloom's Taxonomy.</strong> A useful reference point, not a hierarchy we need to declare obsolete.</li>
+    <li><strong>Contribution.</strong> A theoretically grounded design framework for authentic assessment.</li>
+  </ul>
+  <p class="note">The title is a working title and may change before submission.</p>
+
+  <h2 id="questions">Research questions</h2>
+  <ol>
+    <li><strong>Sociomaterial agency.</strong> How does generative AI reconfigure human and material agency
+      across creating, evaluating, analyzing, and understanding?</li>
+    <li><strong>Authentic assessment.</strong> How can CEAU translate sociomaterial principles into
+      assessment of judgment, understanding, and competence?</li>
+  </ol>
+  <p>Both questions stay conceptual for this paper. AI fluency in the EMBA program appears only as an
+  illustrative transfer case.</p>
+
+  <h2 id="ceau">The CEAU model</h2>
+  <p>CEAU reorders where the grade comes from. Students may use AI to get a first working version. Most
+  of the grade then goes to what AI can't do for them: judging that work, explaining it, and changing
+  and defending it on their own.</p>
+  <div class="cards">
+    <div class="card stage"><div class="letter">C</div><div><h3>Create / Scaffold</h3><p>Get a working version with AI.</p></div></div>
+    <div class="card stage"><div class="letter">E</div><div><h3>Evaluate</h3><p>Test its validity and identify flaws.</p></div></div>
+    <div class="card stage"><div class="letter">A</div><div><h3>Analyze</h3><p>Explain the mechanisms and trade-offs.</p></div></div>
+    <div class="card stage"><div class="letter">U</div><div><h3>Understand &amp; Refine</h3><p>Change and defend the work <strong>without AI</strong>.</p></div></div>
+  </div>
+  <div class="weight" role="img" aria-label="Grade weighting: Create 20 percent; Evaluate, Analyze, and Understand and Refine 80 percent combined">
+    <div class="c">C 20%</div><div class="eau">E + A + U 80%</div>
+  </div>
+  <p class="note">CEAU appears in the paper as a design case from AI 410, not as an impact study: the
+  course will not produce learner outcome data before the January deadline.</p>
+
+  <h2 id="paper">What the paper contains</h2>
+  <p>A conceptual paper, an illustrated CEAU model, and a research agenda. It reports no learner findings.</p>
+  <ol>
+    <li><strong>Problem.</strong> AI-generated deliverables obscure what students know.</li>
+    <li><strong>Theory.</strong> Orlikowski and sociomateriality; agency and practice.</li>
+    <li><strong>Design case.</strong> CEAU in AI 410 and the 20/80 assessment logic.</li>
+    <li><strong>Contribution.</strong> Assessment design principles, with an EMBA transfer example.</li>
+    <li><strong>Next study.</strong> A pilot protocol and propositions for research with a student cohort.</li>
+  </ol>
+
+  <h2 id="program">One research program, two phases</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="label">Phase 1 · ACBSP 2027</div>
+      <p><strong>Conceptual paper</strong></p>
+      <ul>
+        <li>Sociomaterial theory</li>
+        <li>CEAU design case and assessment model</li>
+        <li>Propositions and a future study</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Phase 2 · Scope being decided</div>
+      <p><strong>Empirical study</strong></p>
+      <ul>
+        <li>First AI 410 cohort, subject to approvals</li>
+        <li>Observed learning and agency practices</li>
+        <li>Transferable assessment insights</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Any collection of student research data waits for the applicable institutional ethics
+  determination or approval. No student data is kept in this repository.</p>
+
+  <h2 id="timeline">Timeline</h2>
+  <ul class="timeline">
+    <li><span class="when done">Nov 2</span><span class="done">✓ Kickoff: scope, authorship, roles</span></li>
+    <li><span class="when">Nov 9</span><span>Outline and reference library</span></li>
+    <li><span class="when">Nov 20</span><span>Sociomaterial theory section complete</span></li>
+    <li><span class="when">Dec 4</span><span>CEAU / AI 410 design case complete</span></li>
+    <li><span class="when">Dec 11</span><span>Integrated conceptual framework approved</span></li>
+    <li><span class="when">Dec 23</span><span>First complete manuscript draft</span></li>
+    <li><span class="when">Jan 5</span><span>Joint revised draft</span></li>
+    <li><span class="when">Jan 12</span><span>Submission package approved</span></li>
+    <li><span class="when">Jan 19</span><span><strong>Submit to ACBSP</strong></span></li>
+    <li><span class="when">Mar 11–13</span><span>ACBSP AI Forum, San Diego</span></li>
+  </ul>
+  <p class="note">Dates are from the November 2 kickoff and may shift. The current schedule is in
+  <a href="https://github.com/clarkngo/beyond-blooms-pyramid/blob/main/admin/milestones.md">admin/milestones.md</a>.</p>
+
+  <h2 id="roles">Roles</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Workstream</th><th>Jim</th><th>Clark</th></tr></thead>
+      <tbody>
+        <tr><td>Theoretical foundation &amp; literature</td><td class="role">A/R</td><td class="role">C</td></tr>
+        <tr><td>CEAU model &amp; AI 410 case</td><td class="role">C</td><td class="role">A/R</td></tr>
+        <tr><td>Bloom / Mollick / EMBA linkage</td><td class="role">A/R</td><td class="role">C</td></tr>
+        <tr><td>Integrated framework &amp; propositions</td><td class="role">A</td><td class="role">R</td></tr>
+        <tr><td>Manuscript drafting &amp; revision</td><td class="role">A/R</td><td class="role">R</td></tr>
+        <tr><td>Submission requirements &amp; filing</td><td class="role">A/R</td><td class="role">C</td></tr>
+        <tr><td>Follow-on AI 410 empirical study</td><td class="role">C</td><td class="role">A/R</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">R = responsible · A = accountable · C = consulted. Authorship order has not been agreed yet.</p>
+
+  <h2 id="repo">Repository</h2>
+  <p>Working files are on <a href="https://github.com/clarkngo/beyond-blooms-pyramid">GitHub</a>:</p>
+  <ul>
+    <li><a href="https://github.com/clarkngo/beyond-blooms-pyramid/blob/main/README.md">Research charter</a></li>
+    <li><a href="https://github.com/clarkngo/beyond-blooms-pyramid/blob/main/manuscript/phase1-acbsp-2027/outline.md">Phase 1 outline</a></li>
+    <li><a href="https://github.com/clarkngo/beyond-blooms-pyramid/blob/main/design-case/ceau-ai410.md">CEAU design case</a></li>
+    <li><a href="https://github.com/clarkngo/beyond-blooms-pyramid/tree/main/literature">Literature and references</a></li>
+    <li><a href="https://github.com/clarkngo/beyond-blooms-pyramid/tree/main/meetings">Meeting notes</a></li>
+  </ul>
+
+  <footer>
+    <p>A research collaboration started November 2, 2026. More of Clark's work is on the
+    <a href="https://clarkngo.github.io/research/">research hub</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
