@@ -49,7 +49,7 @@ produce learner outcome data in time for the January submission. See
 | | Phase 1 | Phase 2 |
 |---|---|---|
 | **Output** | Conceptual paper | Empirical study |
-| **Venue** | ACBSP AI Forum 2027 — San Diego, March 11–13 | *Open — see below* |
+| **Venue** | ACBSP 2027 — AI Forum (San Diego, March 11–13) or Conference '27 (Baltimore, June 24–26); to be decided | *Open — see below* |
 | **Content** | Sociomaterial theory; CEAU design case + assessment model; propositions and future study | First cohort study, subject to approvals; observed learning and agency practices; transferable assessment insights |
 | **Evidence** | No learner findings — theory, design, propositions | Data collected only after institutional ethics determination/approval |
 
@@ -68,8 +68,11 @@ produce learner outcome data in time for the January submission. See
 
 ## Key dates
 
-**Submission: January 19, 2027** · internal approval January 12, 2027.
-Full schedule in [`admin/milestones.md`](admin/milestones.md).
+**Planning target: January 19, 2027** · internal approval January 12, 2027.
+January 19 is the verified deadline for the ACBSP Conference '27 call
+(Baltimore, June 24–26). The AI Forum (San Diego, March 11–13) has no public
+call yet. Details in [`admin/submission.md`](admin/submission.md); full
+schedule in [`admin/milestones.md`](admin/milestones.md).
 
 ## Repository layout
 
