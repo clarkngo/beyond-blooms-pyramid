@@ -1,0 +1,8 @@
+.DS_Store
+~$*
+*.tmp
+
+# Anything not meant for a public repo: working drafts you keep locally,
+# third-party documents (e.g. ACBSP templates), and ANY student data.
+private/
+data/
