@@ -1,8 +1,10 @@
-# Phase 1 — Conceptual paper (ACBSP AI Forum 2027)
+# Phase 1 — Conceptual paper (ACBSP 2027)
 
-- **Venue:** ACBSP AI Forum, San Diego, March 11–13, 2027
-- **Submission deadline:** January 19, 2027 (internal approval January 12)
-- **Format / length:** _pending — Jim to send the ACBSP call and format guidelines_
+- **Venue:** to be decided Nov 13 — ACBSP AI Forum (San Diego, March 11–13, 2027;
+  no call posted yet) or ACBSP Conference '27 (Baltimore, June 24–26, 2027)
+- **Planning target:** January 19, 2027 (Conference '27 call deadline; internal approval January 12)
+- **Format / length:** Conference '27 takes a presentation abstract via a portal; word limit
+  not yet known. See [`admin/submission.md`](../../admin/submission.md).
 
 ## What we submit
 

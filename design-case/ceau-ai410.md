@@ -3,7 +3,7 @@
 > Completion target: December 4, 2026 · Owner: Clark (A/R)
 
 **Framing:** design case, not an impact study. AI 410 will not produce learner
-outcome data in time for the January 19 submission.
+outcome data in time for the January 19 planning target.
 
 ## The four stages
 
